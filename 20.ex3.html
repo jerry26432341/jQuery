@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+   
+
+    ul.photo {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+
+    }
+
+    li.pic img{
+        border-radius: 50%;
+        padding: 30px;
+    }
+
+</style>
+
+
+<body>
+    <div class="wrap">
+        <ul class="photo">
+            <li class="pic"><img src="./imgs/person1.jpg" alt=""></li>
+            <li class="pic"><img src="./imgs/person2.jpg" alt=""></li>
+            <li class="pic"><img src="./imgs/person3.jpg" alt=""></li>
+            <li class="pic"><img src="./imgs/person4.jpg" alt=""></li>
+            <li class="pic"><img src="./imgs/person5.jpg" alt=""></li>
+        </ul>
+
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+
+
+    <script>
+
+        $('.pic').click(function(){
+            console.log('$(this)');
+            $(this).css('background', 'red');
+        })
+
+    </script>
+
+
+</body>
+
+</html>
