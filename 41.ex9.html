@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    /* 自己練習 */
+    /* .S{
+        font-size: 14px;
+    }
+
+    .L{
+        font-size: 20px;
+    } */
+</style>
+<body>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="btn-group">
+                <!-- 自己練習 -->
+                <!-- <button id="s" class="btn btn-info">S</button>
+                <button id="m" class="btn btn-info active">M</button>
+                <button id="l" class="btn btn-info">L</button> -->
+                <button class="btn-s btn btn-info ">S</button>
+                <button class="btn-m btn btn-info active">M</button>
+                <button class="btn-l btn btn-info ">L</button>
+            </div>
+        </div>
+        <div class="row">
+            <h2>jQuery</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam architecto maiores odit obcaecati iusto, harum veritatis rerum delectus ea odio minus, ut ratione eum. Sapiente veniam eveniet quia ab rerum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum voluptatum autem harum, eligendi sunt, voluptates reiciendis veniam itaque perferendis magni, doloremque pariatur? Sequi ratione necessitatibus repellendus dicta. Excepturi, perspiciatis reiciendis.</p>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        //自己練習
+        // $('#s').on('click', function(){
+        //     $("h2").css('font-size','30px');
+        //     $("p").css('font-size','16px');
+        // });
+
+        // $('#m').on('click', function(){
+        //     $("h2").css('font-size','32px');
+        //     $("p").css('font-size','18px');
+        // });
+
+        // $('#l').on('click', function(){
+        //     $("h2").css('font-size','34px');
+        //     $("p").css('font-size','20px');
+        // });
+
+
+
+        //老師方法一
+        // $('.btn-s').on('click', function () {
+        //     console.log('btn-s');
+        //     $('p').removeClass().addClass('fontS');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        // });
+        // $('.btn-m').on('click', function () {
+        //     console.log('btn-m');
+        //     $('p').removeClass().addClass('fontM');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        // });
+        // $('.btn-l').on('click', function () {
+        //     console.log('btn-l');
+        //     $('p').removeClass().addClass('fontL');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        // });
+
+
+
+        //老師方法二
+        $('.btn').on('click', function () {
+            // console.log('hi S', $(this).is(':contains("S")'));
+            // console.log('hi M', $(this).is(':contains("M")'));
+            // console.log('hi L', $(this).is(':contains("L")'));
+
+            if ($(this).is(':contains("S")')) {
+                $('p').removeClass().addClass('fontS');
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+
+            if ($(this).is(':contains("M")')) {
+                $('p').removeClass().addClass('fontM');
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+
+            if ($(this).is(':contains("L")')) {
+                $('p').removeClass().addClass('fontL');
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>
