@@ -16,7 +16,7 @@
 
         .wrap {
             max-width: 800px;
-            height: 550px;
+            height: 400px;
             overflow: hidden;
             position: relative;
         }
@@ -24,16 +24,16 @@
         ul.train {
             display: flex;
             width: 5600px;
-            height: 100%;
+            /* height: 100%; */
             list-style: none;
             padding: 0;
             transform: translateX(-0px);
-            transition: .5s;
+            /* transition: .5s; */
         }
 
         li.car img {
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             object-fit: cover;
         }
 
@@ -159,7 +159,13 @@
 
         function changePage() {
             const moveX = ((page) * -800) - 800;
-            $('ul.train').css('transform', `translateX(${moveX}px)`);
+            $('ul.train').css('transition', '0.2s').css('transform', `translateX(${moveX}px)`);
+            $('.slider-dots li').eq(page).css('background', '#fff').siblings().css('background', 'transparent');
+        }
+
+        function changePageQuietly() {
+            const moveX = ((page) * -800) - 800;
+            $('ul.train').css('transition', 'none').css('transform', `translateX(${moveX}px)`);
             $('.slider-dots li').eq(page).css('background', '#fff').siblings().css('background', 'transparent');
         }
 
@@ -178,11 +184,19 @@
         $('.right-arrow').on('click', function () {
             console.log('right-arrow');
             page++;
-            if (page > 5) {
-                page = 0;
-            }
+            if (page > 5) return;
+
             changePage();
         });
+
+        $('ul.train').on('transitionend', function () {
+            console.log('page', page);
+
+            if (page >= 5) {
+                page = 0;
+                changePageQuietly();
+            }
+        })
 
         changePage();
     </script>
